@@ -1,0 +1,82 @@
+{
+  "root": "packages/newreact",
+  "sourceRoot": "packages/newreact/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/newreact",
+        "index": "packages/newreact/src/index.html",
+        "baseHref": "/",
+        "main": "packages/newreact/src/main.tsx",
+        "polyfills": "packages/newreact/src/polyfills.ts",
+        "tsConfig": "packages/newreact/tsconfig.app.json",
+        "assets": [
+          "packages/newreact/src/favicon.ico",
+          "packages/newreact/src/assets"
+        ],
+        "styles": [
+          "packages/newreact/src/styles.scss"
+        ],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/newreact/src/environments/environment.ts",
+              "with": "packages/newreact/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "newreact:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "newreact:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/newreact/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/newreact"
+      ],
+      "options": {
+        "jestConfig": "packages/newreact/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,82 @@
+{
+  "root": "packages/newreact02",
+  "sourceRoot": "packages/newreact02/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": [
+        "{options.outputPath}"
+      ],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/newreact02",
+        "index": "packages/newreact02/src/index.html",
+        "baseHref": "/",
+        "main": "packages/newreact02/src/main.tsx",
+        "polyfills": "packages/newreact02/src/polyfills.ts",
+        "tsConfig": "packages/newreact02/tsconfig.app.json",
+        "assets": [
+          "packages/newreact02/src/favicon.ico",
+          "packages/newreact02/src/assets"
+        ],
+        "styles": [
+          "packages/newreact02/src/styles.scss"
+        ],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/newreact02/src/environments/environment.ts",
+              "with": "packages/newreact02/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "newreact02:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "newreact02:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/newreact02/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/newreact02"
+      ],
+      "options": {
+        "jestConfig": "packages/newreact02/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

@@ -4,7 +4,8 @@
   "description": "A Webpack Module Federation Case In React  ·",
   "main": "index.js",
   "scripts": {
-    "start": "npx lerna run start --parallel"
+    "start": "npx lerna run start --parallel",
+    "go": "nx run-many --target=start --all --parallel --maxParallel=10"
   },
   "repository": {
     "type": "git",
@@ -20,18 +21,18 @@
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
-    "@nrwl/cli": "latest",
-    "@nrwl/cypress": "^13.1.3",
-    "@nrwl/eslint-plugin-nx": "13.1.3",
-    "@nrwl/express": "13.1.3",
-    "@nrwl/jest": "13.1.3",
-    "@nrwl/linter": "13.1.3",
-    "@nrwl/node": "13.1.3",
-    "@nrwl/nx-cloud": "latest",
-    "@nrwl/react": "^13.1.3",
-    "@nrwl/tao": "latest",
-    "@nrwl/web": "13.1.3",
-    "@nrwl/workspace": "latest",
+    "@nrwl/cli": "13.2.0-beta.3",
+    "@nrwl/cypress": "13.2.0-beta.3",
+    "@nrwl/eslint-plugin-nx": "13.2.0-beta.3",
+    "@nrwl/express": "13.2.0-beta.3",
+    "@nrwl/jest": "13.2.0-beta.3",
+    "@nrwl/linter": "13.2.0-beta.3",
+    "@nrwl/node": "13.2.0-beta.3",
+    "@nrwl/nx-cloud": "12.5.2",
+    "@nrwl/react": "13.2.0-beta.3",
+    "@nrwl/tao": "13.2.0-beta.3",
+    "@nrwl/web": "13.2.0-beta.3",
+    "@nrwl/workspace": "13.2.0-beta.3",
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@types/express": "4.17.0",
@@ -75,3 +76,4 @@
     "tslib": "^2.0.0"
   }
 }
+
