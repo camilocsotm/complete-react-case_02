@@ -6,3 +6,7 @@ yarn-error.log
 **/cypress/videos
 
 **/.env.*
+
+# Generated Docusaurus files
+.docusaurus/
+.cache-loader/

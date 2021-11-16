@@ -5,7 +5,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/main-app",

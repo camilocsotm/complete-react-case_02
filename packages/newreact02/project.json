@@ -11,7 +11,7 @@
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/packages/newreact02",
-        "index": "packages/newreact02/src/index.html",
+        "index": "packages/newreact02/public/index.html",
         "baseHref": "/",
         "main": "packages/newreact02/src/main.tsx",
         "polyfills": "packages/newreact02/src/polyfills.ts",
