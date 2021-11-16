@@ -40,7 +40,11 @@
     "defaultBase": "master"
   },
   "cli": {
-    "defaultCollection": "@nrwl/express"
+    "defaultCollection": "@nrwl/react"
+  },
+  "workspaceLayout": {
+    "libsDir": "libs",
+    "appsDir": "packages"
   },
   "defaultProject": "component-app-e2e",
   "generators": {
