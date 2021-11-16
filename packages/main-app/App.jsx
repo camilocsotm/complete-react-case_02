@@ -25,7 +25,8 @@ export default class App extends React.Component{
     render(){
       
       return (<div>
-        <h1>Open Dev Tool And Focus On Network,checkout resources details</h1>
+        <h1>This is the "main-app"</h1>
+        <p>Open Dev Tool And Focus On Network,checkout resources details</p>
         <p>react、react-dom js files hosted on <strong>lib-app</strong></p>
         <p>
           components hosted on <strong>component-app</strong>
