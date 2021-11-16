@@ -1,3 +1,75 @@
 {
-  "root": "packages/main-app"
+  "root": "packages/main-app",
+  "sourceRoot": "packages/main-app/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/packages/main-app",
+        "index": "packages/main-app/public/index.html",
+        "baseHref": "/",
+        "main": "packages/main-app/index.js",
+        "polyfills": "packages/main-app/polyfills.ts",
+        "tsConfig": "packages/main-app/tsconfig.app.json",
+        "assets": [],
+        "styles": [],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "packages/main-app/src/environments/environment.ts",
+              "with": "packages/main-app/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "main-app:build",
+        "hmr": true
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "main-app:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "packages/main-app/**/*.{ts,tsx,js,jsx}"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": [
+        "coverage/packages/main-app"
+      ],
+      "options": {
+        "jestConfig": "packages/main-app/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
 }
