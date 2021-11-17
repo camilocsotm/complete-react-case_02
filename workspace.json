@@ -9,6 +9,6 @@
     "newreact-e2e": "packages/newreact-e2e",
     "newreact02": "packages/newreact02",
     "newreact02-e2e": "packages/newreact02-e2e",
-    "documentation": "apps/documentation"
+    "documentation": "packages/documentation"
   }
 }
