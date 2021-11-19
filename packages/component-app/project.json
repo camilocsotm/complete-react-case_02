@@ -5,9 +5,7 @@
   "targets": {
     "build": {
       "executor": "@nrwl/web:build",
-      "outputs": [
-        "{options.outputPath}"
-      ],
+      "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
         "runtimeChunk": false,
@@ -54,22 +52,17 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
+      "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": [
-          "packages/component-app/**/*.{ts,tsx,js,jsx}"
-        ]
+        "lintFilePatterns": ["packages/component-app/**/*.{ts,tsx,js,jsx}"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": [
-        "coverage/packages/component-app"
-      ],
+      "outputs": ["coverage/packages/component-app"],
       "options": {
         "jestConfig": "packages/component-app/jest.config.js",
+        "tsConfig": "packages/component-app/tsconfig.spec.json",
         "passWithNoTests": true
       }
     }

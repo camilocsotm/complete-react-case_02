@@ -1,17 +1,23 @@
 {
   "extends": "@nrwl/workspace/presets/npm.json",
   "npmScope": "react-webpack-mf",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "nx.json": "*",
+    ".eslintrc.json": "*"
+  },
   "tasksRunnerOptions": {
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "package",
-          "prepare"
-        ],
+        "cacheableOperations": ["build", "test", "lint", "package", "prepare"],
         "accessToken": "MjVlMDdjYjgtNDdmNS00MWFjLThiOWUtYTYxNTE5OWJjMGJlfHJlYWQtd3JpdGU="
       }
     }
@@ -36,9 +42,6 @@
       }
     ]
   },
-  "affected": {
-    "defaultBase": "master"
-  },
   "cli": {
     "defaultCollection": "@nrwl/react"
   },
@@ -46,7 +49,7 @@
     "libsDir": "libs",
     "appsDir": "packages"
   },
-  "defaultProject": "component-app-e2e",
+  "defaultProject": "main-app",
   "generators": {
     "@nrwl/react": {
       "application": {

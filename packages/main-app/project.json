@@ -19,7 +19,7 @@
         "assets": [],
         "styles": [],
         "scripts": [],
-        "webpackConfig": "@nrwl/react/plugins/webpack"
+        "webpackConfig": "packages/main-app/webpack.js"
       },
       "configurations": {
         "production": {
@@ -42,7 +42,9 @@
       "executor": "@nrwl/web:dev-server",
       "options": {
         "buildTarget": "main-app:build",
-        "hmr": true
+        "hmr": true,
+        "port": 4777,
+        "webpackConfig": "packages/main-app/webpackConfig.js"
       },
       "configurations": {
         "production": {

@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 module.exports = {
   entry: "./index.js",
-  mode: "development",  
+  mode: "development",
+  devtool: "hidden-source-map",
   output: {
     publicPath: "http://localhost:3002/",
     clean: true,
@@ -43,6 +44,9 @@ module.exports = {
         "lib-app": "lib_app@http://localhost:3000/remoteEntry.js",
         "component-app": "component_app@http://localhost:3001/remoteEntry.js",
       },
-    })
+    }),
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+    }),
   ],
 };
