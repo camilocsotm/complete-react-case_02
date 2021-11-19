@@ -1,12 +1,12 @@
 {
-  "root": "apps/documentation",
-  "sourceRoot": "apps/documentation/src",
+  "root": "packages/documentation",
+  "sourceRoot": "packages/documentation/src",
   "projectType": "application",
   "targets": {
     "build": {
       "executor": "@nx-plus/docusaurus:browser",
       "options": {
-        "outputPath": "dist/apps/documentation"
+        "outputPath": "dist/packages/documentation"
       }
     },
     "serve": {
