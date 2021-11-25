@@ -1,6 +1,7 @@
 {
   "name": "react-webpack-mf",
   "version": "1.0.0",
+  "private": true,
   "description": "A Webpack Module Federation Case In React  ·",
   "main": "index.js",
   "scripts": {
@@ -104,5 +105,9 @@
     "regenerator-runtime": "0.13.7",
     "tslib": "^2.0.0",
     "yarn": "^1.22.17"
-  }
+  },
+  "workspaces": [
+    "libs/*",
+    "packages/*"
+  ]
 }
